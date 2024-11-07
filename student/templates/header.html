@@ -1,0 +1,19 @@
+<h1 class="text-center text-primary mt-5 text-decoration-underline text-sha text-bold">STUDENT MANAGEMENT</h1>
+<div class="container border rounded p-3 mt-5 d-flex justify-content-between">
+    
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        ADD STUDENTS
+    </button>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success text-center mb-2 " role="alert" >
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form action="{% url 'home' %}" class="d-flex justify-content-center" method="get">
+        <input type="text" placeholder="Search..." value="{{a}}" class="form-control" name="searchQuery" >
+        <button class="btn btn-primary mx-2" type="submit" name="searchQuery">Search</button>
+    </form>
+</div>
+
